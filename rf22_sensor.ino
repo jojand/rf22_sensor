@@ -12,6 +12,7 @@
 #include <SPI.h>
 
 //#define RAM_DEBUG
+#define SERIAL_DEBUG
 
 // project includes
 #include "utils/utils.h"
@@ -209,9 +210,14 @@ void initialSendingLoop() {
 // ********************
 void setup()
 {
+	wdt_reset();
+	wdt_disable();
 	config = new Config(inBuffer);
 
+#ifdef SERIAL_DEBUG
     Serial.begin(SERIAL_BAUD);
+#endif
+
     Serial << endl << endl << INFO_HEADER << F("Sensor rf22 start ...") << endl;
 #ifdef RAM_DEBUG
     Serial << freeRam() << endl;
@@ -222,13 +228,14 @@ void setup()
     initBlink();
 
     // watchdog
-    wdt_reset();
 	Serial << INFO_HEADER << "enabling WDTO_8S" << endl;
 	wdt_enable(WDTO_8S);
+	wdt_reset();
 
     // init measurement
     if (!measurement.begin()) {
         Serial << ERROR_HEADER << F("measurement init failed! Stopping.") << endl;
+        while(1);
     } else {
         Serial << INFO_HEADER << F("measurement init ok ...") << endl;
     }

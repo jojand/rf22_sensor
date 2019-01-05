@@ -73,6 +73,7 @@ bool Measurement::begin() {
     	Serial << INFO_HEADER << F("htu21d init OK.") << endl;
     } else {
     	Serial << ERROR_HEADER << F("htu21d init ERROR!") << endl;
+    	return false;
     }
 #endif
 
