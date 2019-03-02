@@ -20,9 +20,9 @@
 
 #define SERIAL_BAUD         		57600
 #define SERVER_ADDRESS      		200
-#define CLIENT_ADDRESS      		201
+#define CLIENT_ADDRESS      		210
 
-#define DEFAULT_SLEEP_CYCLES		15
+#define DEFAULT_SLEEP_CYCLES		1
 #define INITIAL_LOOP_CYCLES			100
 #define MAX_SLEEP_CYCLES			100
 
