@@ -6,8 +6,8 @@
 // ****************
 
 // Specify a radio driver
-#define DRIVER_RF22
-//#define DRIVER_RF95
+//#define DRIVER_RF22
+#define DRIVER_RF95
 
 #define MAX_MESSAGE_LEN     		50
 #ifdef DRIVER_RF22
@@ -19,8 +19,8 @@
 #define SENT_FAILED_THRESHOLD		3
 
 #define SERIAL_BAUD         		57600
-#define SERVER_ADDRESS      		200
-#define CLIENT_ADDRESS      		201
+#define SERVER_ADDRESS      		100
+#define CLIENT_ADDRESS      		101
 
 #define DEFAULT_SLEEP_CYCLES		15
 #define INITIAL_LOOP_CYCLES			100
@@ -35,7 +35,7 @@
 #define INFO_HEADER     F("[INFO] ")
 #define MQTT_HEADER     F("[MQTT] ")
 
-#define SI_4432_SHDN	4
+#define RADIO_SHDN	4
 #define LED_PIN			8
 
 #define MQTT_STAT_OK_TOPIC	F("rf/0/ok")

@@ -77,7 +77,11 @@ void sendRF(String message) {
 
         	uint8_t power = config->getTxPower();
         	// limit settings
+#ifdef DRIVER_RF22
         	power = power > RH_RF22_TXPOW_20DBM ? RH_RF22_TXPOW_20DBM : power;
+#elif defined DRIVER_RF95
+        	power = power > 25 ? 25 : power;
+#endif
         	Serial << INFO_HEADER << F("Setting txPower to: ") << power << endl;
         	radioDriver.setTxPower(power);
 #ifdef RAM_DEBUG
@@ -234,7 +238,7 @@ void setup()
     }
 
     // init radio
-	pinMode(SI_4432_SHDN, OUTPUT);
+	pinMode(RADIO_SHDN, OUTPUT);
 	radioOff();
 	radioOn();
 	delay(200);
