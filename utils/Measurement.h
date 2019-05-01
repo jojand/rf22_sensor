@@ -3,7 +3,7 @@
 
 #include "Arduino.h"
 
-#define ADC_BATT_CALIB        	0.003963
+#define ADC_BATT_CALIB        	0.00605
 
 #define MQTT_DS_TEMPERATURE 	F("rf/0/dst")
 #define MQTT_DH_TEMPERATURE 	F("rf/0/dht")

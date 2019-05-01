@@ -9,11 +9,19 @@
 #include "utils.h"
 
 void radioOn() {
-	digitalWrite(SI_4432_SHDN, LOW);
+#ifdef DRIVER_RF22
+	digitalWrite(RADIO_SHDN, LOW);
+#elif defined DRIVER_RF95
+	digitalWrite(RADIO_SHDN, HIGH);
+#endif
 }
 
 void radioOff() {
-	digitalWrite(SI_4432_SHDN, HIGH);
+#ifdef DRIVER_RF22
+	digitalWrite(RADIO_SHDN, HIGH);
+#elif defined DRIVER_RF95
+	digitalWrite(RADIO_SHDN, LOW);
+#endif
 }
 
 void initBlink() {
