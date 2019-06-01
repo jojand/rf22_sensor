@@ -13,16 +13,17 @@
 #ifdef DRIVER_RF22
     #define DEFAULT_TX_POW          RH_RF22_TXPOW_17DBM
 #elif defined DRIVER_RF95
-    #define DEFAULT_TX_POW          10
+    #define DEFAULT_TX_POW          1
+
 #endif
 
 #define SENT_FAILED_THRESHOLD		3
 
 #define SERIAL_BAUD         		57600
-#define SERVER_ADDRESS      		100
-#define CLIENT_ADDRESS      		101
+#define SERVER_ADDRESS      		200
+#define CLIENT_ADDRESS      		201
 
-#define DEFAULT_SLEEP_CYCLES		15
+#define DEFAULT_SLEEP_CYCLES		2
 #define INITIAL_LOOP_CYCLES			100
 #define MAX_SLEEP_CYCLES			100
 

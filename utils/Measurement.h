@@ -36,7 +36,7 @@
 #endif
 
 // HTU21D
-#define HTU21D_ENABLED
+//#define HTU21D_ENABLED
 
 // ADC
 #define BATT_PIN     A0
