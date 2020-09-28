@@ -4,13 +4,7 @@
 #include <RHReliableDatagram.h>
 #include <LowPower.h>
 #include <OneWire.h>
-#if defined DRIVER_RF22
-#include <RH_RF22.h>
-#elif defined DRIVER_RF95
-#include <RH_RF95.h>
-#endif
 #include <SPI.h>
-
 //#define RAM_DEBUG
 
 // project includes
@@ -18,6 +12,12 @@
 #include "utils/Measurement.h"
 #include "utils/Config.h"
 #include "Streaming.h"
+
+#ifdef DRIVER_RF22
+#include <RH_RF22.h>
+#elif defined DRIVER_RF95
+#include <RH_RF95.h>
+#endif
 
 #if defined DRIVER_RF22
 RH_RF22 radioDriver;

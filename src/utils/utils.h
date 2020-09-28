@@ -6,8 +6,8 @@
 // ****************
 
 // Specify a radio driver
-//#define DRIVER_RF22
-#define DRIVER_RF95
+#define DRIVER_RF22
+//#define DRIVER_RF95
 
 #define MAX_MESSAGE_LEN     		50
 #ifdef DRIVER_RF22
@@ -19,8 +19,8 @@
 #define SENT_FAILED_THRESHOLD		3
 
 #define SERIAL_BAUD         		57600
-#define SERVER_ADDRESS      		100
-#define CLIENT_ADDRESS      		101
+#define SERVER_ADDRESS      		200
+#define CLIENT_ADDRESS      		202
 
 #define DEFAULT_SLEEP_CYCLES		15
 #define INITIAL_LOOP_CYCLES			100
